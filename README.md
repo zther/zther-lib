@@ -24,6 +24,18 @@ Basic usage is as follows:
 
 For advanced usage, see the documentation.
 
+## Building
+
+	npm install
+
+	grunt
+
+## Testing
+
+Make sure you've installed node modules first.
+
+	grunt test
+
 ## Documentation
 
 Start with `docs/MAIN.md`.
