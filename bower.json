@@ -3,10 +3,8 @@
   "version": "0.0.0",
   "main": "dist/zther-lib.min.js",
   "ignore": [
-    "**/.*",
     "node_modules",
-    "bower_components",
-    "test"
+    "bower_components"
   ],
   "dependencies": {}
 }
