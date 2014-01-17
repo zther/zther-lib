@@ -13,7 +13,9 @@ module.exports = function(grunt) {
           'src/utils/RatioUtil.js',
           'src/utils/NumberUtil.js',
           'src/geom/Rectangle.js',
-          'src/geom/Point.js'
+          'src/geom/Point.js',
+          'src/geom/Polygon.js',
+          'src/geom/Square.js'
         ],
         dest: 'dist/<%= pkg.name.replace(".js", "") %>.js'
       }
