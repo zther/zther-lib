@@ -1,6 +1,3 @@
-/* zther.util main */
-
-// Base function.
 var zther = zther || {};
 	zther.util =  zther.util || {};
 	zther.util.RatioUtil = {
@@ -22,7 +19,3 @@ var zther = zther || {};
 			return size.height / size.width;
 		}
 	};
-
-
-// Version.
-zther.util.RatioUtil.VERSION = '0.0.0';

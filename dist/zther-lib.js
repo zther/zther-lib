@@ -1,6 +1,3 @@
-/* zther.util main */
-
-// Base function.
 var zther = zther || {};
 	zther.util =  zther.util || {};
 	zther.util.RatioUtil = {
@@ -24,13 +21,6 @@ var zther = zther || {};
 	};
 
 
-// Version.
-zther.util.RatioUtil.VERSION = '0.0.0';
-
-
-/* zther.util main */
-
-// Base function.
 var zther = zther || {};
 	zther.util =  zther.util || {};
 	zther.util.NumberUtil = {
@@ -52,5 +42,34 @@ var zther = zther || {};
 	};
 
 
-// Version.
-zther.util.NumberUtil.VERSION = '0.0.0';
+var zther = zther || {};
+	zther.geom =  zther.geom || {};
+	zther.geom.Rectangle = function(x,y,width,height) {
+		"use strict";
+
+		this.x = x;
+		this.y = y;
+		this.width = width;
+		this.height = height;
+
+		this.contains = function(x,y){
+			return this.x <= x && this.x + this.width >= x && this.y <= y && this.y + this.height >= y;
+		};
+
+		this.containsPoint = function(p){
+			if( p instanceof zther.geom.Point ){
+				return this.contains(p.x, p.y);
+			}else{
+				throw "zther.geom.Rectangle.containsPoint() method requires instance of zther.geom.Point";
+			}
+		};
+	};
+
+var zther = zther || {};
+	zther.geom =  zther.geom || {};
+	zther.geom.Point = function(x,y) {
+		"use strict";
+
+		this.x = x;
+		this.y = y;
+	};

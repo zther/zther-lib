@@ -1,6 +1,3 @@
-/* zther.util main */
-
-// Base function.
 var zther = zther || {};
 	zther.util =  zther.util || {};
 	zther.util.NumberUtil = {
@@ -20,7 +17,3 @@ var zther = zther || {};
 			return (value & 1) === 0;
 		}
 	};
-
-
-// Version.
-zther.util.NumberUtil.VERSION = '0.0.0';
