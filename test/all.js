@@ -102,4 +102,68 @@ test("Check Square contains point", function(){
       equal( square.containsPoint( new this.Point(300,200) ), true );
       equal( square.containsPoint( new this.Point(400,300) ), true );
       equal( square.containsPoint( new this.Point(400,0) ), false );
+
+/*speed test between square and poly
+var min = 0;
+var max = 500;
+
+var squares = [];
+var polys = [];
+ var point = [];
+for(var i=0; i< 5000; i++){
+
+  var points = [];
+ 
+  for(var j=0; j<4; j++){
+    // and the formula is:
+    var x = Math.floor(Math.random() * (max - min + 1)) + min;
+    var y = Math.floor(Math.random() * (max - min + 1)) + min;
+
+    points.push(new this.Point(x,y));
+  }
+
+  var x = Math.floor(Math.random() * (max - min + 1)) + min;
+  var y = Math.floor(Math.random() * (max - min + 1)) + min;
+  
+  point.push(point);
+  squares.push(new this.Square(points) );
+  polys.push(new this.Polygon(points) );
+}
+
+var start = +new Date();
+for(var k=0; k<squares.length; k++){
+  squares[k].containsPoint( point[k]);
+}
+var end =  +new Date();
+var diff = end - start;
+console.log('squares: ',diff);
+
+var start = +new Date();
+for(var k=0; k<squares.length; k++){
+  polys[k].containsPoint( point[k]);
+}
+var end =  +new Date();
+var diff = end - start;
+console.log('polys: ',diff);
+ end speed test */
+
+});
+
+module( "Test GeomUtil", {
+  setup: function() {
+    // prepare something for all following tests
+    this.GeomUtil = zther.util.GeomUtil;
+  },
+  teardown: function() {
+    // clean up after each test
+  }
+});
+
+test("GeomUtil exists", function() {
+  ok(zther.util.GeomUtil);
+});
+
+test("GeomUtil exists", function() {
+  equal(this.GeomUtil.normalizeDegree(-90), 270 );
+  equal(this.GeomUtil.normalizeDegree(1080), 0 );
 });
