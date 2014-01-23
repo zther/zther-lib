@@ -50,6 +50,13 @@ We'll check out your contribution if you:
 
 We'll do our best to help you out with any contribution issues you may have.
 
+Some steps to follow:
+
+- Create your class following the namespace conventions.
+- Add the class to the concat task
+- Add your unit tests
+- Run grunt
+
 ## License
 
 MIT. See `LICENSE.txt` in this directory.

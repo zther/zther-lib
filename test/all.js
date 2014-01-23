@@ -46,6 +46,7 @@ module( "Test Geom", {
     this.Point = zther.geom.Point;
     this.Polygon = zther.geom.Polygon;
     this.Square = zther.geom.Square;
+    this.Ellipse = zther.geom.Ellipse;
   },
   teardown: function() {
     // clean up after each test
@@ -62,6 +63,14 @@ test("Check contains", function(){
       equal(rect.contains(60,60), true);
       equal(rect.contains(10,10), true);
       equal(rect.contains(20,61), false);
+});
+
+test("Test Ellipse", function(){
+  var ellipse = new this.Ellipse(10, 10, 10, 10);
+
+      equal(ellipse.size.x, 10);
+      equal(ellipse.containsPoint(new this.Point(10,10) ), false);
+      equal(ellipse.containsPoint(new this.Point(15,15) ), true);
 });
 
 test("Check contains point", function(){
@@ -102,50 +111,6 @@ test("Check Square contains point", function(){
       equal( square.containsPoint( new this.Point(300,200) ), true );
       equal( square.containsPoint( new this.Point(400,300) ), true );
       equal( square.containsPoint( new this.Point(400,0) ), false );
-
-/*speed test between square and poly
-var min = 0;
-var max = 500;
-
-var squares = [];
-var polys = [];
- var point = [];
-for(var i=0; i< 5000; i++){
-
-  var points = [];
- 
-  for(var j=0; j<4; j++){
-    // and the formula is:
-    var x = Math.floor(Math.random() * (max - min + 1)) + min;
-    var y = Math.floor(Math.random() * (max - min + 1)) + min;
-
-    points.push(new this.Point(x,y));
-  }
-
-  var x = Math.floor(Math.random() * (max - min + 1)) + min;
-  var y = Math.floor(Math.random() * (max - min + 1)) + min;
-  
-  point.push(point);
-  squares.push(new this.Square(points) );
-  polys.push(new this.Polygon(points) );
-}
-
-var start = +new Date();
-for(var k=0; k<squares.length; k++){
-  squares[k].containsPoint( point[k]);
-}
-var end =  +new Date();
-var diff = end - start;
-console.log('squares: ',diff);
-
-var start = +new Date();
-for(var k=0; k<squares.length; k++){
-  polys[k].containsPoint( point[k]);
-}
-var end =  +new Date();
-var diff = end - start;
-console.log('polys: ',diff);
- end speed test */
 
 });
 

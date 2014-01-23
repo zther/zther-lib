@@ -9,15 +9,7 @@ module.exports = function(grunt) {
         separator: "\n\n"
       },
       dist: {
-        src: [
-          'src/utils/RatioUtil.js',
-          'src/utils/NumberUtil.js',
-          'src/geom/Rectangle.js',
-          'src/geom/Point.js',
-          'src/geom/Polygon.js',
-          'src/geom/Square.js',
-          'src/utils/GeomUtil.js'
-        ],
+        src: [],//gets populated with prepare
         dest: 'dist/<%= pkg.name.replace(".js", "") %>.js'
       }
     },
@@ -38,7 +30,7 @@ module.exports = function(grunt) {
     },
 
     jshint: {
-      files: ['dist/zther-lib.js'],
+      files: [],//gets populated with prepare
       options: {
         globals: {
           console: true,
@@ -61,8 +53,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadTasks('./tasks');
 
-  grunt.registerTask('test', ['jshint', 'qunit']);
-  grunt.registerTask('default', ['concat', 'jshint', 'qunit', 'uglify']);
+  grunt.registerTask('test', ['prepare','jshint', 'qunit']);
+  grunt.registerTask('default', ['prepare', 'jshint', 'concat', 'qunit', 'uglify']);
 
 };
