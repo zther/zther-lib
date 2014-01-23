@@ -1,24 +1,30 @@
-module( "Test RatioUtil", {
-  setup: function() {
-    // prepare something for all following tests
-    this.RatioUtil = zther.util.RatioUtil;
-  },
-  teardown: function() {
-    // clean up after each test
-  }
-});
+(function() {
 
-test("RatioUtil exists", function() {
-  ok(zther.util.RatioUtil);
-});
+  var RatioUtil;
 
-test("widthToHeight", function(){
-	equal( this.RatioUtil.widthToHeight({width:100,height:50}) , 2);
-});
+  module( "Test RatioUtil", {
+    setup: function() {
+      // prepare something for all following tests
+      RatioUtil = zther.util.RatioUtil;
+    },
+    teardown: function() {
+      // clean up after each test
+    }
+  });
 
-test("heightToWidth", function(){
-	equal( this.RatioUtil.heightToWidth({width:50,height:50}) , 1);
-})
+  test("RatioUtil exists", function() {
+    ok( RatioUtil );
+  });
+
+  test("widthToHeight", function(){
+    equal( RatioUtil.widthToHeight({width:100,height:50}) , 2);
+  });
+
+  test("heightToWidth", function(){
+    equal( RatioUtil.heightToWidth({width:50,height:50}) , 1);
+  })
+
+})();
 
 module( "Test NumberUtil", {
   setup: function() {
