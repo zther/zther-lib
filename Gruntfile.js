@@ -4,16 +4,18 @@ module.exports = function(grunt) {
 
     pkg: grunt.file.readJSON('package.json'),
 
+    prepare: {
+      files: []
+    },
     concat: {
       options: {
         separator: "\n\n"
       },
       dist: {
-        src: [],//gets populated with prepare
+        src: ['<%= prepare.files %>'],//gets populated with prepare
         dest: 'dist/<%= pkg.name.replace(".js", "") %>.js'
       }
     },
-
     uglify: {
       options: {
         banner: '/*! <%= pkg.name.replace(".js", "") %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
@@ -30,7 +32,7 @@ module.exports = function(grunt) {
     },
 
     jshint: {
-      files: [],//gets populated with prepare
+      files: ['<%= prepare.files %>'],//gets populated with prepare
       options: {
         globals: {
           console: true,

@@ -71,6 +71,14 @@ test("Test Ellipse", function(){
       equal(ellipse.size.x, 10);
       equal(ellipse.containsPoint(new this.Point(10,10) ), false);
       equal(ellipse.containsPoint(new this.Point(15,15) ), true);
+      var truePoint = new this.Point(15,10);
+      var pointOfDegree = ellipse.getPointOfDegree(0);
+      equal(pointOfDegree.x, truePoint.x );
+      equal(pointOfDegree.y, truePoint.y );
+      var truePoint = new this.Point(20,15);
+      var pointOfDegree = ellipse.getPointOfDegree(90);
+      equal(pointOfDegree.x, truePoint.x );
+      equal(pointOfDegree.y, truePoint.y );
 });
 
 test("Check contains point", function(){
