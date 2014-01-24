@@ -4,7 +4,7 @@ Javascript util library.  Port of Casalib library for AS3
 
 ## About
 
-A JavaScript library by Joel Caballero.
+A JavaScript library by Zther.
 
 See the [project homepage](http://.github.io/zther-lib).
 
