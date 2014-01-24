@@ -254,27 +254,30 @@ var zther = zther || {};
 var zther = zther || {};
 	zther.time =  zther.time || {};
 	zther.time.Interval = {
-		setInterval : function(delay, args) {
+		setInterval : function(callback, delay, args) {
 			"use strict";
-			return new zther.time.Tick(delay, 0, args);
+			return new zther.time.Tick(callback, delay, 0, args, true);
 		},
-		setTimeout : function(delay, args) {
+		setTimeout : function(callback, delay, args) {
 			"use strict";
-			return new zther.time.Tick(delay, 1, args);
+			return new zther.time.Tick(callback, delay, 1, args, true);
 		}
 	};
 
 /*global signals */
 var zther = zther || {};
 	zther.time =  zther.time || {};
-	zther.time.Tick = function(delay, repeatCount, args){
+	zther.time.Tick = function(callback, delay, repeatCount, args, autoStart){
 		"use strict";
 
 		var _delay = delay;
-		var _repeatCount = repeatCount;
+		var _repeatCount = repeatCount || 0;
 		var _currentCount = 0;
-		var _ticked = new signals.Signal();
-		var _args = args;
+		var _updated = new signals.Signal();
+		var _completed = new signals.Signal();
+		var _callback = callback || function(){};
+		var _args = args || [];
+		var _autoStart = autoStart || false;
 		var _interval;
 
 		Object.defineProperty(this,"arguments",{
@@ -286,10 +289,12 @@ var zther = zther || {};
 			}
 		});
 
-		Object.defineProperty(this,"ticked",{
-			get: function() {
-				return _ticked;
-			}
+		Object.defineProperty(this,"updated",{
+			get: function(){ return _updated; }
+		});
+
+		Object.defineProperty(this,"completed",{
+			get: function(){ return _completed; }
 		});
 
 		Object.defineProperty(this,"repeatCount",{
@@ -310,13 +315,24 @@ var zther = zther || {};
 			}
 		});
 
+		Object.defineProperty(this,"callback",{
+			get: function() {
+				return _callback;
+			},
+			set: function(value) {
+				_callback = value;
+			}
+		});
+
 		this.destroy = function() {
-			_ticked.dispose();
+			_updated.dispose();
+			_completed.dispose();
 		};
 
 		this.start = function(){
+			var self = this;
 			_interval = setInterval(function(){
-				timerHandler(this);
+				timerHandler(self);
 			}, _delay);
 		};
 
@@ -325,16 +341,23 @@ var zther = zther || {};
 		};
 
 		function timerHandler(self) {
-			_ticked.dispatch(_args);
+			_updated.dispatch(_args);
 
 			if(_repeatCount){
 				_currentCount++;
 				if(_currentCount == _repeatCount){
 					self.stop();
+					_completed.dispatch(_args);
+					_callback(_args);
 				}
+			}else{
+				_callback(_args);
 			}
 		}
 
+		if(_autoStart){
+			this.start();
+		}
 	};
 
 var zther = zther || {};
