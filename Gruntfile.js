@@ -5,14 +5,14 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     prepare: {
-      files: []
+      include: ['libs/signals/dist/signals.min.js']
     },
     concat: {
       options: {
         separator: "\n\n"
       },
       dist: {
-        src: ['<%= prepare.files %>'],//gets populated with prepare
+        src: [],//gets populated with prepare
         dest: 'dist/<%= pkg.name.replace(".js", "") %>.js'
       }
     },
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
     },
 
     jshint: {
-      files: ['<%= prepare.files %>'],//gets populated with prepare
+      files: [],//gets populated with prepare
       options: {
         globals: {
           console: true,
