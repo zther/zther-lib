@@ -20,7 +20,10 @@ Or grab the [source](https://github.com//zther-lib/dist/zther-lib.js) ([minified
 
 Basic usage is as follows:
 
-    zther-lib();
+    var size = {width:10, height: 10 };
+    var ratio = zther.utils.RatioUtil.heightToWidth(size);
+
+    console.log(ratio);  // returns 1
 
 For advanced usage, see the documentation.
 
@@ -29,6 +32,12 @@ For advanced usage, see the documentation.
 	npm install
 
 	grunt
+
+## Releasing
+
+This will create a compressed version of the files.
+
+	grunt release
 
 ## Testing
 
