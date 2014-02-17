@@ -360,8 +360,8 @@ var zther = zther || {};
 		}
 	};
 
-(function(){
-	"use strict";
+//(function(){
+//	"use strict";
 
 	var zther = zther || {};
 		zther.util =  zther.util || {};
@@ -374,6 +374,7 @@ var zther = zther || {};
 		@return Returns the number of bytes.
 		*/
 		bitsToBytes : function(bits) {
+			"use strict";
 			return bits / 8;
 		},
 
@@ -384,6 +385,7 @@ var zther = zther || {};
 		@return Returns the number of kilobits.
 		*/
 		bitsToKilobits : function(bits) {
+			"use strict";
 			return bits / 1024;
 		},
 
@@ -394,6 +396,7 @@ var zther = zther || {};
 		@return Returns the number of kilobits.
 		*/
 		bitsToKilobytes : function(bits) {
+			"use strict";
 			return bits / 8192;
 		},
 
@@ -404,6 +407,7 @@ var zther = zther || {};
 		@return Returns the number of bits.
 		*/
 		bytesToBits : function(bytes) {
+			"use strict";
 			return bytes * 8;
 		},
 
@@ -414,6 +418,7 @@ var zther = zther || {};
 		@return Returns the number of kilobits.
 		*/
 		bytesToKilobits : function(bytes) {
+			"use strict";
 			return bytes / 128;
 		},
 
@@ -424,6 +429,7 @@ var zther = zther || {};
 		@return Returns the number of kilobytes.
 		*/
 		bytesToKilobytes : function(bytes) {
+			"use strict";
 			return bytes / 1024;
 		},
 
@@ -434,6 +440,7 @@ var zther = zther || {};
 		@return Returns the number of bits.
 		*/
 		kilobitsToBits : function(kilobits) {
+			"use strict";
 			return kilobits * 1024;
 		},
 
@@ -444,6 +451,7 @@ var zther = zther || {};
 		@return Returns the number of bytes.
 		*/
 		kilobitsToBytes : function(kilobits) {
+			"use strict";
 			return kilobits * 128;
 		},
 
@@ -454,6 +462,7 @@ var zther = zther || {};
 		@return Returns the number of kilobytes.
 		*/
 		kilobitsToKilobytes : function(kilobits) {
+			"use strict";
 			return kilobits / 8;
 		},
 
@@ -464,6 +473,7 @@ var zther = zther || {};
 		@return Returns the number of bits.
 		*/
 		kilobytesToBits : function(kilobyte) {
+			"use strict";
 			return kilobyte * 8192;
 		},
 
@@ -474,6 +484,7 @@ var zther = zther || {};
 		@return Returns the number of bytes.
 		*/
 		kilobytesToBytes : function(kilobytes) {
+			"use strict";
 			return kilobytes * 1024;
 		},
 
@@ -484,6 +495,7 @@ var zther = zther || {};
 		@return Returns the number of kilobits.
 		*/
 		kilobytesToKilobits : function(kilobytes) {
+			"use strict";
 			return kilobytes * 8;
 		},
 
@@ -494,6 +506,7 @@ var zther = zther || {};
 		@return Returns the number of seconds.
 		*/
 		millisecondsToSeconds : function(milliseconds) {
+			"use strict";
 			return milliseconds / 1000;
 		},
 
@@ -504,6 +517,7 @@ var zther = zther || {};
 		@return Returns the number of minutes.
 		*/
 		millisecondsToMinutes : function(milliseconds) {
+			"use strict";
 			return zther.util.ConversionUtil.secondsToMinutes(zther.util.ConversionUtil.millisecondsToSeconds(milliseconds));
 		},
 
@@ -514,6 +528,7 @@ var zther = zther || {};
 		@return Returns the number of hours.
 		*/
 		millisecondsToHours : function(milliseconds) {
+			"use strict";
 			return zther.util.ConversionUtil.minutesToHours(zther.util.ConversionUtil.millisecondsToMinutes(milliseconds));
 		},
 
@@ -524,6 +539,7 @@ var zther = zther || {};
 		@return Returns the number of days.
 		*/
 		millisecondsToDays : function(milliseconds) {
+			"use strict";
 			return zther.util.ConversionUtil.hoursToDays(zther.util.ConversionUtil.millisecondsToHours(milliseconds));
 		},
 
@@ -534,6 +550,7 @@ var zther = zther || {};
 		@return Returns the number of milliseconds.
 		*/
 		secondsToMilliseconds : function(seconds) {
+			"use strict";
 			return seconds * 1000;
 		},
 
@@ -544,6 +561,7 @@ var zther = zther || {};
 		@return Returns the number of minutes.
 		*/
 		secondsToMinutes : function(seconds) {
+			"use strict";
 			return seconds / 60;
 		},
 
@@ -554,6 +572,7 @@ var zther = zther || {};
 		@return Returns the number of hours.
 		*/
 		secondsToHours : function(seconds) {
+			"use strict";
 			return zther.util.ConversionUtil.minutesToHours(zther.util.ConversionUtil.secondsToMinutes(seconds));
 		},
 
@@ -564,6 +583,7 @@ var zther = zther || {};
 		@return Returns the number of days.
 		*/
 		secondsToDays : function(seconds) {
+			"use strict";
 			return zther.util.ConversionUtil.hoursToDays(zther.util.ConversionUtil.secondsToHours(seconds));
 		},
 
@@ -574,6 +594,7 @@ var zther = zther || {};
 		@return Returns the number of milliseconds.
 		*/
 		minutesToMilliseconds : function(minutes) {
+			"use strict";
 			return zther.util.ConversionUtil.secondsToMilliseconds(zther.util.ConversionUtil.minutesToSeconds(minutes));
 		},
 
@@ -584,6 +605,7 @@ var zther = zther || {};
 		@return Returns the number of seconds.
 		*/
 		minutesToSeconds : function(minutes) {
+			"use strict";
 			return minutes * 60;
 		},
 
@@ -594,6 +616,7 @@ var zther = zther || {};
 		@return Returns the number of hours.
 		*/
 		minutesToHours : function(minutes) {
+			"use strict";
 			return minutes / 60;
 		},
 
@@ -604,6 +627,7 @@ var zther = zther || {};
 		@return Returns the number of days.
 		*/
 		minutesToDays : function(minutes) {
+			"use strict";
 			return zther.util.ConversionUtil.hoursToDays(zther.util.ConversionUtil.minutesToHours(minutes));
 		},
 
@@ -614,6 +638,7 @@ var zther = zther || {};
 		@return Returns the number of milliseconds.
 		*/
 		hoursToMilliseconds : function(hours) {
+			"use strict";
 			return zther.util.ConversionUtil.secondsToMilliseconds(zther.util.ConversionUtil.hoursToSeconds(hours));
 		},
 
@@ -624,6 +649,7 @@ var zther = zther || {};
 		@return Returns the number of seconds.
 		*/
 		hoursToSeconds : function(hours) {
+			"use strict";
 			return zther.util.ConversionUtil.minutesToSeconds(zther.util.ConversionUtil.hoursToMinutes(hours));
 		},
 
@@ -634,6 +660,7 @@ var zther = zther || {};
 		@return Returns the number of minutes.
 		*/
 		hoursToMinutes : function(hours) {
+			"use strict";
 			return hours * 60;
 		},
 
@@ -644,6 +671,7 @@ var zther = zther || {};
 		@return Returns the number of days.
 		*/
 		hoursToDays : function(hours) {
+			"use strict";
 			return hours / 24;
 		},
 
@@ -654,6 +682,7 @@ var zther = zther || {};
 		@return Returns the number of milliseconds.
 		*/
 		daysToMilliseconds : function(days) {
+			"use strict";
 			return zther.util.ConversionUtil.secondsToMilliseconds(zther.util.ConversionUtil.daysToSeconds(days));
 		},
 
@@ -664,6 +693,7 @@ var zther = zther || {};
 		@return Returns the number of seconds.
 		*/
 		daysToSeconds : function(days) {
+			"use strict";
 			return zther.util.ConversionUtil.minutesToSeconds(zther.util.ConversionUtil.daysToMinutes(days));
 		},
 
@@ -674,6 +704,7 @@ var zther = zther || {};
 		@return Returns the number of minutes.
 		*/
 		daysToMinutes : function(days) {
+			"use strict";
 			return zther.util.ConversionUtil.hoursToMinutes(zther.util.ConversionUtil.daysToHours(days));
 		},
 		/**
@@ -683,6 +714,7 @@ var zther = zther || {};
 		@return Returns the number of hours.
 		*/
 		daysToHours : function(days) {
+			"use strict";
 			return days * 24;
 		},
 
@@ -693,6 +725,7 @@ var zther = zther || {};
 		@return Returns the number of radians.
 		*/
 		degreesToRadians : function(degrees) {
+			"use strict";
 			return degrees * (Math.PI / 180);
 		},
 
@@ -703,13 +736,14 @@ var zther = zther || {};
 		@return Returns the number of degrees.
 		*/
 		radiansToDegrees : function(radians) {
+			"use strict";
 			return radians * (180 / Math.PI);
 		}
 	};
-})();
+//})();
 
-(function(){
-    "use strict";
+//(function(){
+//   "use strict";
 
     var zther = zther || {};
         zther.util =  zther.util || {};
@@ -726,6 +760,7 @@ var zther = zther || {};
                 </code>
                 */
                 getTimeBetween : function(startDate, endDate) {
+                    "use strict";
                     return endDate.getTime() - startDate.getTime();
                 },
 
@@ -742,6 +777,7 @@ var zther = zther || {};
                 </code>
                 */
                 getCountdownUntil : function(startDate, endDate) {
+                    "use strict";
                     var daysUntil   = zther.util.ConversionUtil.millisecondsToDays(zther.util.DateUtil.getTimeBetween(startDate, endDate));
                     var hoursUntil  = zther.util.ConversionUtil.daysToHours(daysUntil % 1);
                     var minsUntil   = zther.util.ConversionUtil.hoursToMinutes(hoursUntil % 1);
@@ -756,7 +792,7 @@ var zther = zther || {};
                         milliseconds: parseInt(milliUntil,10)};
                     }
     };
-})();
+//})();
 
 var zther = zther || {};
 	zther.util =  zther.util || {};

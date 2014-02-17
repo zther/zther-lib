@@ -1,5 +1,5 @@
-(function(){
-    "use strict";
+//(function(){
+//   "use strict";
 
     var zther = zther || {};
         zther.util =  zther.util || {};
@@ -16,6 +16,7 @@
                 </code>
                 */
                 getTimeBetween : function(startDate, endDate) {
+                    "use strict";
                     return endDate.getTime() - startDate.getTime();
                 },
 
@@ -32,6 +33,7 @@
                 </code>
                 */
                 getCountdownUntil : function(startDate, endDate) {
+                    "use strict";
                     var daysUntil   = zther.util.ConversionUtil.millisecondsToDays(zther.util.DateUtil.getTimeBetween(startDate, endDate));
                     var hoursUntil  = zther.util.ConversionUtil.daysToHours(daysUntil % 1);
                     var minsUntil   = zther.util.ConversionUtil.hoursToMinutes(hoursUntil % 1);
@@ -46,4 +48,4 @@
                         milliseconds: parseInt(milliUntil,10)};
                     }
     };
-})();
+//})();
